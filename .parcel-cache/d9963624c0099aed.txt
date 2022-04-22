@@ -39,7 +39,7 @@
 74C:\GitHub\JS_44\goit-js-hw-09\node_modules\source-map\lib\binary-search.js131369414910000000 0
 69C:\GitHub\JS_44\goit-js-hw-09\node_modules\htmlnano\docs\package.json121436361000000000 0
 82C:\GitHub\JS_44\goit-js-hw-09\node_modules\@parcel\transformer-babel\src\config.js121436361000000000 0
-34C:\GitHub\JS_44\goit-js-hw-09\dist132951061550371633 1
+34C:\GitHub\JS_44\goit-js-hw-09\dist132951063081764527 1
 64C:\GitHub\JS_44\goit-js-hw-09\node_modules\nan\nan_object_wrap.h132319691430000000 0
 40C:\GitHub\JS_44\goit-js-hw-09\index.html132950930980000000 0
 74C:\GitHub\JS_44\goit-js-hw-09\node_modules\caniuse-lite\data\regions\AG.js121436361000000000 0
@@ -61,7 +61,7 @@
 64C:\GitHub\JS_44\goit-js-hw-09\node_modules\css-tree\lib\index.js121436361000000000 0
 75C:\GitHub\JS_44\goit-js-hw-09\node_modules\@parcel\packager-js\lib\utils.js121436361000000000 0
 47C:\GitHub\JS_44\goit-js-hw-09\package-lock.json132951045137582612 0
-42C:\GitHub\JS_44\goit-js-hw-09\package.json132951061413353156 0
+42C:\GitHub\JS_44\goit-js-hw-09\package.json132951062970983690 0
 70C:\GitHub\JS_44\goit-js-hw-09\node_modules\css-tree\lib\lexer\Lexer.js121436361000000000 0
 65C:\GitHub\JS_44\goit-js-hw-09\node_modules\timsort\src\timsort.js131138581980000000 0
 85C:\GitHub\JS_44\goit-js-hw-09\node_modules\@parcel\runtime-react-refresh\package.json132951045120309708 0
@@ -1444,7 +1444,7 @@
 53C:\GitHub\JS_44\goit-js-hw-09\node_modules\parcel\lib132951045076061030 1
 58C:\GitHub\JS_44\goit-js-hw-09\node_modules\nan\doc\json.md132725664060000000 0
 118C:\GitHub\JS_44\goit-js-hw-09\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\package-module\main.js121436361000000000 0
-48C:\GitHub\JS_44\goit-js-hw-09\dist\02-timer.html132951061550321771 0
+48C:\GitHub\JS_44\goit-js-hw-09\dist\02-timer.html132951063081614931 0
 62C:\GitHub\JS_44\goit-js-hw-09\node_modules\parcel\package.json132951045121314925 0
 89C:\GitHub\JS_44\goit-js-hw-09\node_modules\lmdb\prebuilds\linux-x64\node.abi88.glibc.node121436361000000000 0
 57C:\GitHub\JS_44\goit-js-hw-09\node_modules\nan\nan_weak.h132319691430000000 0
@@ -4087,14 +4087,14 @@
 64C:\GitHub\JS_44\goit-js-hw-09\dist\01-color-switcher.3c9b1456.js132951054754662579 0
 64C:\GitHub\JS_44\goit-js-hw-09\dist\01-color-switcher.aa9198b5.js132951055203815929 0
 68C:\GitHub\JS_44\goit-js-hw-09\dist\01-color-switcher.aa9198b5.js.map132951055203921992 0
-57C:\GitHub\JS_44\goit-js-hw-09\dist\01-color-switcher.html132951061550321771 0
+57C:\GitHub\JS_44\goit-js-hw-09\dist\01-color-switcher.html132951063081614931 0
 59C:\GitHub\JS_44\goit-js-hw-09\dist\02-timer.edd4bcfe.js.map132951055203921992 0
 58C:\GitHub\JS_44\goit-js-hw-09\dist\03-promises.1e891781.js132951054754662579 0
 58C:\GitHub\JS_44\goit-js-hw-09\dist\03-promises.42319569.js132951055203815929 0
 62C:\GitHub\JS_44\goit-js-hw-09\dist\03-promises.42319569.js.map132951055203921992 0
-51C:\GitHub\JS_44\goit-js-hw-09\dist\03-promises.html132951061550321771 0
+51C:\GitHub\JS_44\goit-js-hw-09\dist\03-promises.html132951063081614931 0
 64C:\GitHub\JS_44\goit-js-hw-09\dist\goit-js-hw-09.3464ddca.js.map132951054754872016 0
 53C:\GitHub\JS_44\goit-js-hw-09\dist\index.1a987f15.css132951055203815929 0
 57C:\GitHub\JS_44\goit-js-hw-09\dist\index.1a987f15.css.map132951055203921992 0
-45C:\GitHub\JS_44\goit-js-hw-09\dist\index.html132951061550321771 0
+45C:\GitHub\JS_44\goit-js-hw-09\dist\index.html132951063081614931 0
 44C:\GitHub\JS_44\goit-js-hw-09\css\common.css132950930980000000 0
