@@ -2848,7 +2848,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var flatpickr = require("flatpickr");
 
-console.log(_notiflix.default);
 var refs = {
   datePiker: document.querySelector("input#datetime-picker"),
   buttonStart: document.querySelector("button[data-start]"),
@@ -2869,29 +2868,6 @@ var options = {
 };
 var calendar = flatpickr.default(refs.datePiker, options);
 
-function startDateCounter() {
-  setInterval(countTime, 1000);
-  refs.buttonStart.setAttribute("disabled", "disabled");
-  refs.datePiker.setAttribute("disabled", "disabled");
-}
-
-function countTime() {
-  var userDate = calendar.selectedDates[0].getTime();
-  var currentDate = Date.now();
-  var timeDif = userDate - currentDate;
-
-  var _convertMs = convertMs(timeDif),
-      days = _convertMs.days,
-      hours = _convertMs.hours,
-      minutes = _convertMs.minutes,
-      seconds = _convertMs.seconds;
-
-  refs.days.textContent = days;
-  refs.hours.textContent = hours;
-  refs.minutes.textContent = minutes;
-  refs.seconds.textContent = seconds;
-}
-
 function checkInputDate() {
   if (!refs.buttonStart.hasAttribute("disabled")) {
     refs.buttonStart.setAttribute("disabled", "disabled");
@@ -2907,6 +2883,29 @@ function checkInputDate() {
   }
 
   _notiflix.default.Notify.failure("Please choose s date in the future");
+}
+
+function startDateCounter() {
+  setInterval(countTime, 1000);
+  refs.buttonStart.setAttribute("disabled", "disabled");
+  refs.datePiker.setAttribute("disabled", "disabled");
+}
+
+function countTime() {
+  var userDate = calendar.selectedDates[0].getTime();
+  var currentDate = Date.now();
+  var timeDif = userDate - currentDate;
+
+  var _addLeadingZero = addLeadingZero(convertMs(timeDif)),
+      days = _addLeadingZero.days,
+      hours = _addLeadingZero.hours,
+      minutes = _addLeadingZero.minutes,
+      seconds = _addLeadingZero.seconds;
+
+  refs.days.textContent = days;
+  refs.hours.textContent = hours;
+  refs.minutes.textContent = minutes;
+  refs.seconds.textContent = seconds;
 }
 
 function convertMs(ms) {
@@ -2930,6 +2929,17 @@ function convertMs(ms) {
     seconds: seconds
   };
   return dataObject;
+}
+
+function addLeadingZero(value) {
+  var keys = Object.keys(value);
+
+  for (var _i = 0, _keys = keys; _i < _keys.length; _i++) {
+    var key = _keys[_i];
+    value[key] = String(value[key]).padStart(2, "0");
+  }
+
+  return value;
 }
 },{"flatpickr/dist/flatpickr.min.css":"node_modules/flatpickr/dist/flatpickr.min.css","notiflix":"node_modules/notiflix/dist/notiflix-aio-3.2.5.min.js","flatpickr":"node_modules/flatpickr/dist/esm/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -2959,7 +2969,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54494" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51849" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

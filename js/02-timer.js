@@ -3,8 +3,6 @@ import Notiflix from "notiflix";
 
 const flatpickr = require("flatpickr");
 
-console.log(Notiflix);
-
 const refs = {
 	datePiker: document.querySelector("input#datetime-picker"),
 	buttonStart: document.querySelector("button[data-start]"),
@@ -25,24 +23,8 @@ const options = {
 		checkInputDate();
 	},
 };
+
 let calendar = flatpickr.default(refs.datePiker, options);
-
-function startDateCounter() {
-	setInterval(countTime, 1000);
-	refs.buttonStart.setAttribute("disabled", "disabled");
-	refs.datePiker.setAttribute("disabled", "disabled");
-}
-
-function countTime() {
-	const userDate = calendar.selectedDates[0].getTime();
-	const currentDate = Date.now();
-	const timeDif = userDate - currentDate;
-	const { days, hours, minutes, seconds } = convertMs(timeDif);
-	refs.days.textContent = days;
-	refs.hours.textContent = hours;
-	refs.minutes.textContent = minutes;
-	refs.seconds.textContent = seconds;
-}
 
 function checkInputDate() {
 	if (!refs.buttonStart.hasAttribute("disabled")) {
@@ -57,6 +39,23 @@ function checkInputDate() {
 	}
 
 	Notiflix.Notify.failure("Please choose s date in the future");
+}
+
+function startDateCounter() {
+	setInterval(countTime, 1000);
+	refs.buttonStart.setAttribute("disabled", "disabled");
+	refs.datePiker.setAttribute("disabled", "disabled");
+}
+
+function countTime() {
+	const userDate = calendar.selectedDates[0].getTime();
+	const currentDate = Date.now();
+	const timeDif = userDate - currentDate;
+	const { days, hours, minutes, seconds } = addLeadingZero(convertMs(timeDif));
+	refs.days.textContent = days;
+	refs.hours.textContent = hours;
+	refs.minutes.textContent = minutes;
+	refs.seconds.textContent = seconds;
 }
 
 function convertMs(ms) {
@@ -76,4 +75,14 @@ function convertMs(ms) {
 	const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 	const dataObject = { days, hours, minutes, seconds };
 	return dataObject;
+}
+
+function addLeadingZero(value) {
+	const keys = Object.keys(value);
+
+	for (const key of keys) {
+		value[key] = String(value[key]).padStart(2, "0");
+	}
+
+	return value;
 }
