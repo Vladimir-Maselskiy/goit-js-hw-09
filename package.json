@@ -5,7 +5,7 @@
 	"description": "",
 	"main": "html.js",
 	"scripts": {
-		"start": "parcel *.html",
+		"start": "parcel *.html --public-url goit-js-hw-09/dist",
 		"build": "parcel build index.html --public-url goit-js-hw-09/dist"
 	},
 	"repository": {
