@@ -3,6 +3,8 @@ import Notiflix from "notiflix";
 
 const flatpickr = require("flatpickr");
 
+let idTimerInetval = null;
+
 const refs = {
 	datePiker: document.querySelector("input#datetime-picker"),
 	buttonStart: document.querySelector("button[data-start]"),
@@ -42,7 +44,7 @@ function checkInputDate() {
 }
 
 function startDateCounter() {
-	setInterval(countTime, 1000);
+	idTimerInetval = setInterval(countTime, 1000);
 	refs.buttonStart.setAttribute("disabled", "disabled");
 	refs.datePiker.setAttribute("disabled", "disabled");
 }
@@ -51,11 +53,21 @@ function countTime() {
 	const userDate = calendar.selectedDates[0].getTime();
 	const currentDate = Date.now();
 	const timeDif = userDate - currentDate;
+	if (timeDif < 1000) {
+		stopCountTime();
+	}
+
 	const { days, hours, minutes, seconds } = addLeadingZero(convertMs(timeDif));
 	refs.days.textContent = days;
 	refs.hours.textContent = hours;
 	refs.minutes.textContent = minutes;
 	refs.seconds.textContent = seconds;
+}
+
+function stopCountTime() {
+	clearInterval(idTimerInetval);
+	refs.buttonStart.removeAttribute("disabled");
+	refs.datePiker.removeAttribute("disabled");
 }
 
 function convertMs(ms) {

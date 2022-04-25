@@ -2848,6 +2848,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var flatpickr = require("flatpickr");
 
+var idTimerInetval = null;
 var refs = {
   datePiker: document.querySelector("input#datetime-picker"),
   buttonStart: document.querySelector("button[data-start]"),
@@ -2886,7 +2887,7 @@ function checkInputDate() {
 }
 
 function startDateCounter() {
-  setInterval(countTime, 1000);
+  idTimerInetval = setInterval(countTime, 1000);
   refs.buttonStart.setAttribute("disabled", "disabled");
   refs.datePiker.setAttribute("disabled", "disabled");
 }
@@ -2895,6 +2896,10 @@ function countTime() {
   var userDate = calendar.selectedDates[0].getTime();
   var currentDate = Date.now();
   var timeDif = userDate - currentDate;
+
+  if (timeDif < 1000) {
+    stopCountTime();
+  }
 
   var _addLeadingZero = addLeadingZero(convertMs(timeDif)),
       days = _addLeadingZero.days,
@@ -2906,6 +2911,12 @@ function countTime() {
   refs.hours.textContent = hours;
   refs.minutes.textContent = minutes;
   refs.seconds.textContent = seconds;
+}
+
+function stopCountTime() {
+  clearInterval(idTimerInetval);
+  refs.buttonStart.removeAttribute("disabled");
+  refs.datePiker.removeAttribute("disabled");
 }
 
 function convertMs(ms) {
@@ -2969,7 +2980,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65442" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54833" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
