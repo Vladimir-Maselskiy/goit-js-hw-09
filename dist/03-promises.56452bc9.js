@@ -180,8 +180,6 @@ function onSuccess(_ref) {
       delay = _ref.delay;
 
   _notiflix.default.Notify.success("\u2705 Fulfilled promise ".concat(position, " in ").concat(delay, "ms"));
-
-  console.log(result);
 }
 
 function onFailure(_ref2) {
@@ -217,12 +215,14 @@ function onClick(e) {
 
 function checkDataOnValid() {
   if (!(refs.delay.value && refs.step.value && refs.amoumt.value)) {
-    console.log("enter valid data");
+    _notiflix.default.Notify.failure("enter valid data");
+
     return;
   }
 
-  if (refs.delay.value > 0 && refs.step.value > 0 && refs.amoumt.value && 0) {
-    console.log("enter valid data");
+  if (Number(refs.delay.value) < 0 || Number(refs.step.value) < 0 || Number(refs.amoumt.value) < 0) {
+    _notiflix.default.Notify.failure("enter valid data");
+
     return;
   }
 
@@ -256,7 +256,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65270" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -433,4 +433,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/03-promises.js"], null)
-//# sourceMappingURL=goit-js-hw-09/dist/03-promises.56452bc9.js.map
+//# sourceMappingURL=/03-promises.56452bc9.js.map

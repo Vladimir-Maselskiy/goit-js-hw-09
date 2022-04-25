@@ -38,7 +38,6 @@ function createPromises(amoumt, delay, step) {
 
 function onSuccess({ position, delay }) {
 	Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-	console.log(result);
 }
 
 function onFailure({ position, delay }) {
@@ -76,12 +75,16 @@ function onClick(e) {
 
 function checkDataOnValid() {
 	if (!(refs.delay.value && refs.step.value && refs.amoumt.value)) {
-		console.log("enter valid data");
+		Notiflix.Notify.failure("enter valid data");
 		return;
 	}
 
-	if (refs.delay.value > 0 && refs.step.value > 0 && refs.amoumt.value && 0) {
-		console.log("enter valid data");
+	if (
+		Number(refs.delay.value) < 0 ||
+		Number(refs.step.value) < 0 ||
+		Number(refs.amoumt.value) < 0
+	) {
+		Notiflix.Notify.failure("enter valid data");
 		return;
 	}
 
